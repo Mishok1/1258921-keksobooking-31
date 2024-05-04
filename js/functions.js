@@ -50,4 +50,79 @@ const getRandomArrayRange = (array) => {
   return result;
 };
 
-export {getRandomIntegerGenerator, createConsecutiveIntegerGenerator, getRandomArrayItem, getRandomArrayRange};
+function getApartmentTypeTranslate (apartmentType) {
+  switch (apartmentType) {
+    case 'flat':
+      return 'Квартира';
+    case 'bungalow':
+      return 'Бунгало';
+    case 'house':
+      return 'Дом';
+    case 'palace':
+      return 'Дворец';
+    case 'hotel':
+      return 'Отель';
+    default:
+      return 'Квартира';
+  }
+}
+
+function isFeaturesExist(featuresArray, card) {
+  const wifi = card.querySelector('.popup__feature--wifi');
+  const dishwasher = card.querySelector('.popup__feature--dishwasher');
+  const parking = card.querySelector('.popup__feature--parking');
+  const washer = card.querySelector('.popup__feature--washer');
+  const elevator = card.querySelector('.popup__feature--elevator');
+  const conditioner = card.querySelector('.popup__feature--conditioner');
+
+  featuresArray.forEach((feature) => {
+    if (feature === 'wifi') {
+      wifi.textContent = 'wifi';
+    } else {
+      wifi.remove();
+    }
+    if (feature === 'dishwasher') {
+      dishwasher.textContent = 'dishwasher';
+    } else {
+      dishwasher.remove();
+    }
+    if (feature === 'parking') {
+      parking.textContent = 'parking';
+    } else {
+      parking.remove();
+    }
+    if (feature === 'washer') {
+      washer.textContent = 'washer';
+    } else {
+      washer.remove();
+    }
+    if (feature === 'elevator') {
+      elevator.textContent = 'elevator';
+    } else {
+      elevator.remove();
+    }
+    if (feature === 'conditioner') {
+      conditioner.textContent = 'conditioner';
+    } else {
+      conditioner.remove();
+    }
+  });
+}
+
+function isDataExist (data, element) {
+  if(data) {
+    return data;
+  } else {
+    element.remove();
+  }
+}
+
+export {
+  getRandomIntegerGenerator,
+  createConsecutiveIntegerGenerator,
+  getRandomArrayItem,
+  getRandomArrayRange,
+  getApartmentTypeTranslate,
+  isFeaturesExist,
+  isDataExist
+};

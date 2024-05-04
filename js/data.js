@@ -37,7 +37,7 @@ const APARTMENTFEATURES = [
 const PHOTOSURL = [
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'
+  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
 ];
 
 
@@ -50,7 +50,7 @@ const createAd = () => ({
   offer: {
     title: getRandomArrayItem(TITLES),
     address: `${Number(`35.${getRandomIntegerGenerator(65000, 70000)}`)}, ${Number(`139.${getRandomIntegerGenerator(70000, 80000)}`)}`,
-    price: getRandomIntegerGenerator(1, 10), //Infinity
+    price: getRandomIntegerGenerator(1, 10000), //Infinity
     type: getRandomArrayItem(APARTMENTTYPES),
     rooms: getRandomIntegerGenerator(1, 10), //Infinity
     guests: getRandomIntegerGenerator(1, 10), //Infinity
@@ -66,7 +66,8 @@ const createAd = () => ({
   }
 });
 
-const adsArray = Array.from({length: 10}, createAd);
+const adsArray = Array.from({length: 1}, createAd);
 
-console.log(adsArray);
+export {adsArray};
 
+// console.log(adsArray);
