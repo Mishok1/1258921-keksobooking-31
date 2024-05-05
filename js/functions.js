@@ -50,7 +50,7 @@ const getRandomArrayRange = (array) => {
   return result;
 };
 
-function getApartmentTypeTranslate (apartmentType) {
+function getApartmentTypeTranslate(apartmentType) {
   switch (apartmentType) {
     case 'flat':
       return 'Квартира';
@@ -78,39 +78,67 @@ function isFeaturesExist(featuresArray, card) {
   featuresArray.forEach((feature) => {
     if (feature === 'wifi') {
       wifi.textContent = 'wifi';
-    } else {
-      wifi.remove();
     }
     if (feature === 'dishwasher') {
       dishwasher.textContent = 'dishwasher';
-    } else {
-      dishwasher.remove();
     }
     if (feature === 'parking') {
       parking.textContent = 'parking';
-    } else {
-      parking.remove();
     }
     if (feature === 'washer') {
       washer.textContent = 'washer';
-    } else {
-      washer.remove();
     }
     if (feature === 'elevator') {
       elevator.textContent = 'elevator';
-    } else {
-      elevator.remove();
     }
     if (feature === 'conditioner') {
       conditioner.textContent = 'conditioner';
-    } else {
-      conditioner.remove();
     }
   });
+
+  // featuresArray.forEach((feature) => {
+  //   if (feature === 'wifi') {
+  //     wifi.textContent = 'wifi';
+  //   } else {
+  //     wifi.remove();
+  //     console.log('Удалил wifi');
+  //   }
+  //   if (feature === 'dishwasher') {
+  //     dishwasher.textContent = 'dishwasher';
+  //   } else {
+  //     dishwasher.remove();
+  //     console.log('Удалил dish');
+  //   }
+  //   if (feature === 'parking') {
+  //     parking.textContent = 'parking';
+  //   } else {
+  //     parking.remove();
+  //     console.log('Удалил parking');
+  //   }
+  //   if (feature === 'washer') {
+  //     washer.textContent = 'washer';
+  //   } else {
+  //     washer.remove();
+  //     console.log('Удалил wahser');
+  //   }
+  //   if (feature === 'elevator') {
+  //     elevator.textContent = 'elevator';
+  //   } else {
+  //     elevator.remove();
+  //     console.log('Удалил elevator');
+  //   }
+  //   if (feature === 'conditioner') {
+  //     conditioner.textContent = 'conditioner';
+  //   } else {
+  //     conditioner.remove();
+  //     console.log('Удалил conditioner');
+  //   }
+  // });
+
 }
 
-function isDataExist (data, element) {
-  if(data) {
+function isDataExist(data, element) {
+  if (data) {
     return data;
   } else {
     element.remove();
