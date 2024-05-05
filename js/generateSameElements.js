@@ -46,8 +46,14 @@ adsArray.forEach((createAd) => {
   descriptionElement.textContent = isDataExist(descriptionData, descriptionElement);
 
   const featuresList = card.querySelector('.popup__features');
+  const featureCollection = card.querySelectorAll('.popup__feature');
   const featureData = createAd.offer?.features;
   isFeaturesExist(featureData, card);
+  for(let i = 0; i < featureCollection.length; i++) {
+    if(featureCollection[i].textContent === '') {
+      featureCollection[i].remove();
+    }
+  }
   if (featuresList.children.length < 1) {
     featuresList.remove();
   }
