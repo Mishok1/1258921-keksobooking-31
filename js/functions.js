@@ -145,6 +145,14 @@ function isDataExist(data, element) {
   }
 }
 
+
+function addErrorClass (invalidElement, isValid) {
+  if (!isValid) {
+    const invalidField = invalidElement.parentNode;
+    invalidField.classList.add('ad-form__element--invalid');
+  }
+}
+
 export {
   getRandomIntegerGenerator,
   createConsecutiveIntegerGenerator,
@@ -152,5 +160,6 @@ export {
   getRandomArrayRange,
   getApartmentTypeTranslate,
   isFeaturesExist,
-  isDataExist
+  isDataExist,
+  addErrorClass
 };
