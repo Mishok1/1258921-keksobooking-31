@@ -66,7 +66,7 @@ const createAd = () => ({
   }
 });
 
-const adsArray = Array.from({length: 1}, createAd);
+const adsArray = Array.from({length: 3}, createAd);
 
 export {adsArray};
 

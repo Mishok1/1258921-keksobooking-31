@@ -75,10 +75,7 @@ adsArray.forEach((createAd) => {
   cardFragment.appendChild(card);
 });
 
+export {cardFragment};
 
-mapCanvas.appendChild(cardFragment);
-
+// mapCanvas.appendChild(cardFragment); //Print card
 // console.log(cardFragment);
-
-
-// Соответствующий блок в карточке скрывается. ili udalyaetsya? (hidden or remove?)
