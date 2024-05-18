@@ -23,24 +23,20 @@ const inactivePage = () => {
 };
 
 const activePage = () => {
-  if (true) { //success
-    adForm.classList.remove('ad-form--disabled');
-    headerFieldset.removeAttribute('disabled');
+  adForm.classList.remove('ad-form--disabled');
+  headerFieldset.removeAttribute('disabled');
 
-    for (const element of adFormElements) {
-      element.removeAttribute('disabled');
-    }
+  for (const element of adFormElements) {
+    element.removeAttribute('disabled');
+  }
 
-    mapFilter.classList.remove('map__filters--disabled');
-    for (const element of mapFilterSelects) {
-      element.removeAttribute('disabled');
-    }
+  mapFilter.classList.remove('map__filters--disabled');
+  for (const element of mapFilterSelects) {
+    element.removeAttribute('disabled');
   }
 };
 
 inactivePage();
-activePage();
-
 
 /* global Pristine:readonly */
 // const adForm = document.querySelector('.ad-form');
@@ -83,7 +79,7 @@ titleInput.addEventListener('change', onTitleChange);
 const priceInput = adForm.querySelector('#price');
 
 function validatePrice(value) {
-  return value < 100_000;
+  return value <= 100_000;
 }
 
 pristine.addValidator(
@@ -282,7 +278,7 @@ timeOutSelect.addEventListener('change', changeTimeOut);
 adForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
   // pristine.validate();
-  if(pristine.validate()) {
+  if (pristine.validate()) {
     console.log('Valid');
   } else {
     console.log('invalid');
@@ -290,3 +286,5 @@ adForm.addEventListener('submit', (evt) => {
 });
 
 // Pochemu ne poyavlyaetsya oshibka: This field is required
+
+export { activePage };
