@@ -68,73 +68,75 @@ function getApartmentTypeTranslate(apartmentType) {
 }
 
 function isFeaturesExist(featuresArray, card) {
-  const wifi = card.querySelector('.popup__feature--wifi');
-  const dishwasher = card.querySelector('.popup__feature--dishwasher');
-  const parking = card.querySelector('.popup__feature--parking');
-  const washer = card.querySelector('.popup__feature--washer');
-  const elevator = card.querySelector('.popup__feature--elevator');
-  const conditioner = card.querySelector('.popup__feature--conditioner');
+  if (featuresArray) {
+    const wifi = card.querySelector('.popup__feature--wifi');
+    const dishwasher = card.querySelector('.popup__feature--dishwasher');
+    const parking = card.querySelector('.popup__feature--parking');
+    const washer = card.querySelector('.popup__feature--washer');
+    const elevator = card.querySelector('.popup__feature--elevator');
+    const conditioner = card.querySelector('.popup__feature--conditioner');
 
-  featuresArray.forEach((feature) => {
-    if (feature === 'wifi') {
-      wifi.textContent = 'wifi';
-    }
-    if (feature === 'dishwasher') {
-      dishwasher.textContent = 'dishwasher';
-    }
-    if (feature === 'parking') {
-      parking.textContent = 'parking';
-    }
-    if (feature === 'washer') {
-      washer.textContent = 'washer';
-    }
-    if (feature === 'elevator') {
-      elevator.textContent = 'elevator';
-    }
-    if (feature === 'conditioner') {
-      conditioner.textContent = 'conditioner';
-    }
-  });
+    featuresArray.forEach((feature) => {
+      if (feature === 'wifi') {
+        wifi.textContent = 'wifi';
+      }
+      if (feature === 'dishwasher') {
+        dishwasher.textContent = 'dishwasher';
+      }
+      if (feature === 'parking') {
+        parking.textContent = 'parking';
+      }
+      if (feature === 'washer') {
+        washer.textContent = 'washer';
+      }
+      if (feature === 'elevator') {
+        elevator.textContent = 'elevator';
+      }
+      if (feature === 'conditioner') {
+        conditioner.textContent = 'conditioner';
+      }
+    });
 
-  // featuresArray.forEach((feature) => {
-  //   if (feature === 'wifi') {
-  //     wifi.textContent = 'wifi';
-  //   } else {
-  //     wifi.remove();
-  //     console.log('Удалил wifi');
-  //   }
-  //   if (feature === 'dishwasher') {
-  //     dishwasher.textContent = 'dishwasher';
-  //   } else {
-  //     dishwasher.remove();
-  //     console.log('Удалил dish');
-  //   }
-  //   if (feature === 'parking') {
-  //     parking.textContent = 'parking';
-  //   } else {
-  //     parking.remove();
-  //     console.log('Удалил parking');
-  //   }
-  //   if (feature === 'washer') {
-  //     washer.textContent = 'washer';
-  //   } else {
-  //     washer.remove();
-  //     console.log('Удалил wahser');
-  //   }
-  //   if (feature === 'elevator') {
-  //     elevator.textContent = 'elevator';
-  //   } else {
-  //     elevator.remove();
-  //     console.log('Удалил elevator');
-  //   }
-  //   if (feature === 'conditioner') {
-  //     conditioner.textContent = 'conditioner';
-  //   } else {
-  //     conditioner.remove();
-  //     console.log('Удалил conditioner');
-  //   }
-  // });
+    // featuresArray.forEach((feature) => {
+    //   if (feature === 'wifi') {
+    //     wifi.textContent = 'wifi';
+    //   } else {
+    //     wifi.remove();
+    //     console.log('Удалил wifi');
+    //   }
+    //   if (feature === 'dishwasher') {
+    //     dishwasher.textContent = 'dishwasher';
+    //   } else {
+    //     dishwasher.remove();
+    //     console.log('Удалил dish');
+    //   }
+    //   if (feature === 'parking') {
+    //     parking.textContent = 'parking';
+    //   } else {
+    //     parking.remove();
+    //     console.log('Удалил parking');
+    //   }
+    //   if (feature === 'washer') {
+    //     washer.textContent = 'washer';
+    //   } else {
+    //     washer.remove();
+    //     console.log('Удалил wahser');
+    //   }
+    //   if (feature === 'elevator') {
+    //     elevator.textContent = 'elevator';
+    //   } else {
+    //     elevator.remove();
+    //     console.log('Удалил elevator');
+    //   }
+    //   if (feature === 'conditioner') {
+    //     conditioner.textContent = 'conditioner';
+    //   } else {
+    //     conditioner.remove();
+    //     console.log('Удалил conditioner');
+    //   }
+    // });
 
+  }
 }
 
 function isDataExist(data, element) {
@@ -146,7 +148,7 @@ function isDataExist(data, element) {
 }
 
 
-function addErrorClass (invalidElement, isValid) {
+function addErrorClass(invalidElement, isValid) {
   if (!isValid) {
     const invalidField = invalidElement.parentNode;
     invalidField.classList.add('ad-form__element--invalid');

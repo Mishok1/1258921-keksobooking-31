@@ -1,6 +1,6 @@
 import { activePage } from './form.js';
-import { adsArray } from './data.js';
-import { cardFragment } from './generateSameElements.js';
+// import { adsArray } from './api.js';
+// import { cardFragment } from './generateSameElements.js';
 
 const addressInput = document.querySelector('[name="address"]');
 const TILE_LAYER = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -27,8 +27,8 @@ const mainPin = {
 
 const standartPin = {
   url: './img/pin.svg',
-  width: 52,
-  height: 52,
+  width: 40,
+  height: 40,
   anchorX: 26,
   anchorY: 52,
 };
@@ -38,7 +38,7 @@ const resetButton = document.querySelector('#reset');//Change id
 
 const map = L.map('map-canvas')
   .on('load', () => {
-    console.log('Карта инициализирована');
+    // console.log('Карта инициализирована');
     activePage(); //active Page
   })
   .setView(cityCenter, ZOOM);
@@ -115,15 +115,19 @@ const icon = L.icon({
 //     .bindPopup(cardFragment.children[i]); //Nado sdelat inache
 //   i = i + 1;
 // });
+// console.log(cardFragment.children[0]);
 
-for (let i = 0; i < adsArray.length; i++) {
-  console.log(adsArray[i]);
-  const marker = L.marker(
-    adsArray[i].location,
-    { icon: icon } //How is it works? Why just "icon" isn't working?
-  );
+function addMarkers(array) {
+  for (let i = 0; i < array.length; i++) {
+    const marker = L.marker(
+      array[i].location,
+      { icon: icon } //How is it works? Why just "icon" isn't working?
+    );
 
-  marker
-    .addTo(map)
-    .bindPopup(cardFragment.children[i]); //Nado sdelat inache
+    marker
+      .addTo(map)
+      .bindPopup(array.children[i]); //Nado sdelat inache //Sachem?
+  }
 }
+
+export { addMarkers };
